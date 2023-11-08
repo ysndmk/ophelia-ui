@@ -44,7 +44,7 @@
     "@types/jest": "^29.5.1",
     "@types/react": "^18.2.2",
     "@types/styled-components": "^5.1.26",
-    "ant": "^0.2.0",
+    "antd": "^5.11.0",
     "jest": "^29.5.0",
     "jest-environment-jsdom": "^29.5.0",
     "rollup": "^3.0.0",
