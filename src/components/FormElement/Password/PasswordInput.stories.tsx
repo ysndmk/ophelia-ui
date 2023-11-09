@@ -27,7 +27,7 @@ Password.args = {
   placeholder: "******",
   disabled: false,
   allowClear: true,
-  label: "Password:",
+  label: "Password",
   maxLength: 5,
   required: false,
   showCount: true,

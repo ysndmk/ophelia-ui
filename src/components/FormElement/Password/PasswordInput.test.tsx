@@ -1,53 +1,43 @@
-// import React from "react";
-// import { render, fireEvent } from "@testing-library/react";
-// import PasswordInput from "./PasswordInput";
+import React from "react";
+import {
+  render,
+  screen,
+} from "@testing-library/react";
+import PasswordInput from "./PasswordInput";
+import "@testing-library/jest-dom";
 
-// window.matchMedia = jest.fn().mockImplementation(query => {
-//     return {
-//       matches: true, // Eşleşip eşleşmediğini burada ayarlayabilirsiniz.
-//       media: query,
-//       onchange: null,
-//       addListener: jest.fn(),
-//       removeListener: jest.fn(),
-//     };
-//   });
-  
+global.matchMedia =
+  global.matchMedia ||
+  function () {
+    return {
+      matches: true,
+      addListener: function () {},
+      removeListener: function () {},
+    };
+  };
 
-// describe("PasswordInput Component", () => {
-//   it("renders correctly with default props", () => {
-//     const { getByLabelText, getByPlaceholderText } = render(
-//       <PasswordInput id="id" name="Password" />
-//     );
+describe("Running Test for Password Input", () => {
+  test("Check placeholder in Password", () => {
+    render(<PasswordInput placeholder="Password" maxLength={3} />);
+    const input = screen.getByPlaceholderText("Password");
+    expect(input).toHaveAttribute("placeholder", "Password");
+  });
 
-//     expect(getByLabelText("Password:")).toBeInTheDocument();
-//     expect(getByPlaceholderText("******")).toBeInTheDocument();
-//     // Diğer özelliklere göre de testler ekleyebilirsiniz.
-//   });
+  test("Check maxLength value is correct", () => {
+    render(<PasswordInput placeholder="Password" maxLength={3} />);
+    const input = screen.getByPlaceholderText("Password");
+    expect(input).toHaveAttribute("maxLength", "3");
+  });
 
-//   it("displays a warning status", () => {
-//     const { getByLabelText } = render(
-//       <PasswordInput id="id" name="Password" status="warning" />
-//     );
+  test("Check password input is disabled", () => {
+    render(<PasswordInput placeholder="Password" disabled={true} />);
+    const input = screen.getByPlaceholderText("Password");
+    expect(input).toBeDisabled();
+  });
 
-//     const input = getByLabelText("Password:");
-//     expect(input).toHaveClass("ant-input-warning");
-//     // Diğer testler ekleyebilirsiniz.
-//   });
-
-//   it("allows user input and clears the input", () => {
-//     const { getByLabelText, getByDisplayValue, getByTestId } = render(
-//       <PasswordInput id="id" name="Password" label="Password:" allowClear={true} />
-//     );
-
-//     const input = getByLabelText("Password:");
-//     const clearButton = getByTestId("PasswordInput-id").querySelector(".ant-input-clear-icon");
-
-//     fireEvent.change(input, { target: { value: "testpassword" } });
-//     expect(getByDisplayValue("testpassword")).toBeInTheDocument();
-
-//     fireEvent.click(clearButton);
-//     expect(getByDisplayValue("")).toBeInTheDocument();
-//   });
-
-//   // Diğer test senaryolarını eklemeye devam edebilirsiniz.
-// });
+  test("Check password input is required", () => {
+    render(<PasswordInput placeholder="Password" required={true} />);
+    const input = screen.getByPlaceholderText("Password");
+    expect(input).toBeRequired();
+  });
+});

@@ -25,6 +25,7 @@ const PasswordInput = ({
           <Form.Item
             label={label ? label : ""}
             required={required}
+            htmlFor={propName}
             rules={[
               {
                 required: true,
