@@ -12,33 +12,39 @@ const PasswordInput = ({
   placeholder,
   prefix,
   id,
-  disabled = false,
-  required = false,
+  disabled,
+  required,
   label,
-  name,
-  direction = "horizontal",
+  propName,
   ...props
 }: PasswordInputProps) => {
-  const [form] = Form.useForm();
 
   return (
     <StyledPasswordInput>
       <Space>
-        <Form
-          form={form}
-          name="validateOnly"
-          layout={direction}
-          autoComplete="off"
-        >
           <Form.Item
-            name={name}
             label={label ? label : ""}
+            required={required}
+            htmlFor={propName}
             rules={[
-              { required: required, message: "Please input your password!" },
+              {
+                required: true,
+              },
+              ({ getFieldValue }) => ({
+                validator(_, value) {
+                  if (!value || getFieldValue('password') === value) {
+                    return Promise.resolve();
+                  }
+                  return Promise.reject(new Error('The new password that you entered do not match!'));
+                },
+              }),
             ]}
+            // dependencies={['password']} Todo
+
           >
             <Input.Password
               id={id}
+              name={propName}
               type="password"
               required={required}
               maxLength={maxLength}
@@ -48,10 +54,10 @@ const PasswordInput = ({
               placeholder={placeholder}
               prefix={status && prefix}
               disabled={disabled}
+           
               {...props}
             />
           </Form.Item>
-        </Form>
       </Space>
     </StyledPasswordInput>
   );

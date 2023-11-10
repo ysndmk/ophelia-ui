@@ -9,12 +9,8 @@ const meta: Meta<typeof PasswordInput> = {
   tags: ["autodocs"],
   argTypes: {
     status: {
-      options: ["warning", "error", undefined],
+      options: ["warning", "error", ""],
       control: { type: "select" },
-    },
-    direction: {
-      options: ["vertical", "horizontal"],
-      control: { type: "radio" },
     },
   },
 };
@@ -27,12 +23,11 @@ export const Password: Story = (args) => (
 );
 Password.args = {
   id: "id",
-  name: "Password",
+  propName: "Password",
   placeholder: "******",
   disabled: false,
   allowClear: true,
-  label: "Password:",
-  direction: "vertical",
+  label: "Password",
   maxLength: 5,
   required: false,
   showCount: true,

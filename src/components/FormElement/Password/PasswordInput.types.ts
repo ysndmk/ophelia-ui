@@ -5,13 +5,12 @@ export interface PasswordInputProps {
   maxLength?: number;
   showCount?: boolean;
   allowClear?: boolean;
-  status?: "warning" | "error" | undefined;
+  status?: "warning" | "error" | "";
   placeholder?: string;
   prefix?: ReactNode;
   disabled?: boolean;
   required?: boolean;
   label?: string;
-  name?: string;
-  direction?: "horizontal" | "vertical";
+  propName?: string;
   // onClick?: MouseEventHandler<HTMLButtonElement>;
 }
