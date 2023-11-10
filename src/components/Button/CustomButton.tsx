@@ -9,26 +9,26 @@ const CustomButton: React.FC<ButtonProps> = ({
   className,
   loading,
   shape,
-  type,
   disabled,
   ghost,
   danger,
   fullWidth,
   iconPosition,
   iconName,
+  buttonType,
   ...props
 }) => {
   return (
-    <StyledButton className={className}>
+    <StyledButton>
       <Button
         shape={shape}
-        type={type}
         loading={loading}
         ghost={ghost}
         disabled={disabled}
         danger={danger}
         block={fullWidth}
         iconPosition="left"
+        className={"ant-custom-" + buttonType}
         iconName={iconName}
         {...props}
       >

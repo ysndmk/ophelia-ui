@@ -4,7 +4,6 @@ export interface ButtonProps {
   children?: ReactNode;
   loading?: boolean;
   shape?: "default" | "circle" | "round";
-  type?: "primary" | "dashed" | "link" | "text" | "default";
   ghost?: boolean;
   disabled?: boolean;
   danger?: boolean;
@@ -12,5 +11,12 @@ export interface ButtonProps {
   fullWidth?: boolean;
   iconPosition?: "left" | "right" | "";
   iconName?: string;
+  buttonType?:
+    | "primary"
+    | "secondary"
+    | "danger"
+    | "success"
+    | "warning"
+    | "darkBlue";
   // onClick?: MouseEventHandler<HTMLButtonElement>;
 }
