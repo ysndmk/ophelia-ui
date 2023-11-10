@@ -5,24 +5,20 @@ import { PaginationProps } from "./CustomPagination.types";
 
 const CustomPagination = ({
   totalItemCount,
-  id,
-  size,
   paginationOnChange,
-  showQuickJumper,
-  defaultCurrent,
+  showSizeChanger,
+  current,
   pageSize,
   ...props
 }: PaginationProps) => {
   return (
     <StyledPagination>
       <Pagination
-        id={id}
-        defaultCurrent={defaultCurrent}
-        showQuickJumper={showQuickJumper}
-        size={size}
-        pageSize={pageSize}
+        pageSize={pageSize || 16}
+        current={current || 1}
         total={totalItemCount}
         onChange={paginationOnChange}
+        showSizeChanger={showSizeChanger}
         {...props}
       />
     </StyledPagination>

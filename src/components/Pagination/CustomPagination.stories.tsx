@@ -6,12 +6,7 @@ const meta: Meta<typeof CustomPagination> = {
   component: CustomPagination,
   title: "Components/Pagination",
   tags: ["autodocs"],
-  argTypes: {
-    size: {
-      options: ["default", "small"],
-      control: { type: "radio" },
-    },
-  },
+  argTypes: {},
 };
 export default meta;
 
@@ -22,11 +17,9 @@ export const Pagination: Story = (args) => (
 );
 
 Pagination.args = {
-  id: "1",
   totalItemCount: 10,
-  size: "small",
   paginationOnChange: () => {},
-  showQuickJumper: true,
-  defaultCurrent: 5,
+  showSizeChanger: true,
+  current: 5,
   pageSize: 10,
 };

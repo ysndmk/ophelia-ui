@@ -6,7 +6,11 @@ const meta: Meta<typeof CustomButton> = {
   component: CustomButton,
   title: "Components/Button",
   tags: ["autodocs"],
-  argTypes: {},
+  argTypes: {
+    iconPosition: {
+      options: ["right", "left"],
+    },
+  },
 };
 export default meta;
 
@@ -47,4 +51,26 @@ DeleteButton.args = {
   shape: "default",
   type: "primary",
   danger: true,
+};
+
+export const FullWidth: Story = (args) => (
+  <div>
+    <CustomButton data-test-id="Button-id" {...args} />
+  </div>
+);
+FullWidth.args = {
+  children: "make the button fit to its parent width.",
+  fullWidth: true,
+};
+
+export const ButtonWithIcon: Story = (args) => (
+  <div>
+    <CustomButton data-test-id="Button-id" {...args} />
+  </div>
+);
+ButtonWithIcon.args = {
+  children: "Button With Icon",
+  fullWidth: false,
+  iconPosition: "left",
+  iconName: "test",
 };
