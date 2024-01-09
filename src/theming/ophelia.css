@@ -1,0 +1,58 @@
+:root {
+    --quip-theme-color-black: #000;
+    --quip-theme-color-white: #fff;
+    --primary-p-01: #1e1d6e;
+    --primary-p-05: #4d4bc8;
+    --quip-theme-primary-p-06: #6b69d1;
+    --quip-theme-primary-p-07: #8987da;
+    --quip-theme-primary-p-08: #a6a5e3;
+    --quip-theme-primary-p-09: #c4c3eb;
+    --quip-theme-primary-p-10: #e1e1f5;
+    --quip-theme-primary-p-04: #3533bb;
+    --quip-theme-primary-p-11: #f4f4fb;
+    --quip-theme-secondary-s-01: #06f;
+    --quip-theme-grey-color-g-01: #000;
+    --quip-theme-primary-p-02-primary: #252387;
+    --quip-theme-grey-color-g-02-sec-ndary: #171a20;
+    --quip-theme-grey-color-g-03: #2d3341;
+    --quip-theme-grey-color-g-06: #75819e;
+    --quip-theme-grey-color-g-04: #444d61;
+    --quip-theme-grey-color-g-05: #5b6782;
+    --quip-theme-grey-color-g-07: #959fb5;
+    --quip-theme-primary-p-03: #2d2b9f;
+    --quip-theme-grey-color-g-08: #b5bccb;
+    --quip-theme-grey-color-g-09: #d6dae2;
+    --quip-theme-grey-color-g-11: #f6f7f9;
+    --quip-theme-grey-color-g-12: #fbfbfc;
+    --quip-theme-others-error: #c53a33;
+    --quip-theme-others-online: #0f0;
+    --quip-theme-grey-color-g-10: #e4e7ec;
+    --quip-theme-others-notification: #d35e4e;
+    --quip-theme-others-success: #68c069;
+    --quip-theme-others-pending: #ffae4f;
+    --quip-theme-extarnal-mastecard-red: #d12e2a;
+    --quip-theme-extarnal-mastercard-yellow: #e39d3e;
+    --quip-theme-extarnal-mastercard-orange: #e6672b;
+    --quip-theme-chart-dark-blue: #252387;
+    --quip-theme-extarnal-visa-blue: #191f5a;
+    --quip-theme-chart-cyan: #1edffe;
+    --quip-theme-chart-orange: #fd9633;
+    --quip-theme-chart-purple: #a96af5;
+    --quip-theme-chart-soft-blue: #bebddb;
+    --quip-theme-chart-blue: #1437f5;
+    --quip-theme-chart-red: #ea3323;
+    --quip-theme-chart-yellow: #f6c944;
+    --quip-theme-chart-green: #88cb8c;
+    --quip-theme-chart-green-2: #d5f0db;
+    --gray-500: #667085;
+  }
+
+
+  /* import location storybook/preview  */
+
+
+    color: var(--primary-p-01);
+
+
+
+    background-color: var(--primary-p-01);
